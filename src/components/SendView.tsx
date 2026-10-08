@@ -1,5 +1,5 @@
 import React, { useState, useId } from 'react';
-import { detectContentType, MAX_CONTENT_LENGTH } from '../lib/validation';
+import { detectContentType, formatBytes } from '../lib/validation';
 
 interface SendViewProps {
   onGenerateCode: (content: string, contentType: 'text' | 'url') => Promise<void>;
@@ -18,7 +18,6 @@ export const SendView: React.FC<SendViewProps> = ({
 
   const detectedType = detectContentType(content);
   const byteCount = new TextEncoder().encode(content).length;
-  const isOverLimit = byteCount > MAX_CONTENT_LENGTH;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,11 +26,6 @@ export const SendView: React.FC<SendViewProps> = ({
     const trimmed = content.trim();
     if (!trimmed) {
       setValidationError('Paste something first.');
-      return;
-    }
-
-    if (isOverLimit) {
-      setValidationError(`Content exceeds maximum size of ${MAX_CONTENT_LENGTH / 1024} KB.`);
       return;
     }
 
@@ -88,8 +82,8 @@ export const SendView: React.FC<SendViewProps> = ({
               </span>
             </div>
 
-            <span className={isOverLimit ? 'text-red-600 font-semibold' : ''}>
-              {byteCount > 0 ? `${(byteCount / 1024).toFixed(1)} KB / 10 KB` : 'Max 10 KB'}
+            <span>
+              {byteCount > 0 ? formatBytes(byteCount) : 'No size limit'}
             </span>
           </div>
 
@@ -103,7 +97,7 @@ export const SendView: React.FC<SendViewProps> = ({
         {/* Generate Button */}
         <button
           type="submit"
-          disabled={isLoading || isOverLimit}
+          disabled={isLoading}
           className="w-full mt-2 py-3.5 px-6 rounded-xl font-semibold text-sm sm:text-base text-[#FAF8F5] bg-[#222120] hover:bg-[#343330] active:scale-[0.99] transition-all cursor-pointer shadow-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isLoading ? (

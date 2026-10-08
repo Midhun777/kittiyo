@@ -1,6 +1,15 @@
 // Client-side validation utilities
 
-export const MAX_CONTENT_LENGTH = 10 * 1024; // 10 KB
+/**
+ * Formats byte size into human readable string
+ */
+export function formatBytes(bytes: number): string {
+  if (bytes === 0) return '0 B';
+  const k = 1024;
+  const sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(1))} ${sizes[i]}`;
+}
 
 /**
  * Validates if a string is a safe HTTP/HTTPS URL

@@ -25,7 +25,7 @@ Paste on phone → Get 4-digit code → Enter code on lab PC → Kittiyo? (You g
 - **Zero accounts**: No sign-ups, no profiles, no passwords, no history tracked.
 - **Smart URL detection**: Automatically classifies valid HTTP/HTTPS URLs vs text snippets.
 - **Strict security & privacy**:
-  - Max payload 10 KB to prevent abuse.
+  - No artificial text/content size limit.
   - Safe URL handling (only `http://` and `https://`; dangerous protocols like `javascript:`, `data:`, `file:` are blocked).
   - Plain text rendering (safe against XSS / HTML injection).
   - IP-based rate limiting on both creation and retrieval to prevent brute force.

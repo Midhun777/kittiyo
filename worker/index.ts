@@ -12,7 +12,6 @@ interface ShareRecord {
   expires_at: number;
 }
 
-const MAX_CONTENT_LENGTH = 10 * 1024; // 10 KB
 const DEFAULT_EXPIRATION_SECONDS = 600; // 10 minutes
 const RETRIEVE_RATE_LIMIT = 20; // 20 attempts per minute
 const CREATE_RATE_LIMIT = 15; // 15 creations per minute
@@ -222,15 +221,6 @@ async function handleApiRequest(
     const rawContent = typeof body.content === 'string' ? body.content.trim() : '';
     if (!rawContent) {
       return errorResponse('INVALID_CONTENT', 'Content cannot be empty.', 400);
-    }
-
-    const encoder = new TextEncoder();
-    if (encoder.encode(rawContent).length > MAX_CONTENT_LENGTH) {
-      return errorResponse(
-        'INVALID_CONTENT',
-        `Content exceeds maximum size of ${MAX_CONTENT_LENGTH / 1024} KB.`,
-        400
-      );
     }
 
     // Determine content type safely
