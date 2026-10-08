@@ -23,12 +23,14 @@ export class LabDropApiError extends Error {
   }
 }
 
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+
 /**
  * Creates a new share
  */
 export async function createShare(content: string, contentType?: 'text' | 'url'): Promise<ShareResponse> {
   try {
-    const res = await fetch('/api/share', {
+    const res = await fetch(`${API_BASE}/api/share`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -69,7 +71,7 @@ export async function createShare(content: string, contentType?: 'text' | 'url')
  */
 export async function retrieveShare(code: string): Promise<RetrieveResponse> {
   try {
-    const res = await fetch('/api/retrieve', {
+    const res = await fetch(`${API_BASE}/api/retrieve`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -107,7 +109,7 @@ export async function retrieveShare(code: string): Promise<RetrieveResponse> {
  */
 export async function healthCheck(): Promise<boolean> {
   try {
-    const res = await fetch('/api/health');
+    const res = await fetch(`${API_BASE}/api/health`);
     return res.ok;
   } catch {
     return false;
