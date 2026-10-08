@@ -21,8 +21,9 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
             <path d="M19 16v2m-2 0h4" />
           </svg>
         </div>
-        <h1 className="text-2xl font-bold tracking-tight text-[#222120]">
-          LabDrop
+        <h1 className="text-2xl font-bold tracking-tight text-[#222120] flex items-center gap-1.5">
+          <span>Kittiyo?</span>
+          <span className="text-[11px] font-normal text-[#9C9890] px-1.5 py-0.5 rounded-md bg-[#EFE9DD] border border-[#E2DBD0]">കിട്ടിയോ?</span>
         </h1>
       </div>
 
