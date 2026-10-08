@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --config vite.config.vercel.ts",
+    "build:worker": "vite build",
     "preview": "vite preview",
     "db:migrate:local": "node ./node_modules/wrangler/wrangler-dist/cli.js d1 migrations apply kittiyo-db --local",
     "db:migrate:prod": "node ./node_modules/wrangler/wrangler-dist/cli.js d1 migrations apply kittiyo-db --remote",
-    "deploy": "node ./node_modules/wrangler/wrangler-dist/cli.js deploy"
+    "deploy": "npm run build:worker && node ./node_modules/wrangler/wrangler-dist/cli.js deploy"
   },
   "dependencies": {
     "react": "^19.0.0",
