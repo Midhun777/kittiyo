@@ -120,7 +120,7 @@ export const CodeDisplay: React.FC<CodeDisplayProps> = ({
       {/* Lab PC Instructions */}
       <div className="mt-7 pt-5 border-t border-[#EFE9DD]">
         <p className="text-xs text-[#6B6864] leading-relaxed">
-          Open <strong className="text-[#222120]">LabDrop</strong> on your PC<br />
+          Open <strong className="text-[#222120]">Kittiyo?</strong> on your PC<br />
           and enter this code.
         </p>
       </div>

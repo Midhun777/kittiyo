@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "labdrop",
+  "name": "kittiyo",
   "main": "worker/index.ts",
   "compatibility_date": "2025-02-24",
   "compatibility_flags": [
@@ -15,8 +15,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "labdrop-db",
-      "database_id": "local-labdrop-db"
+      "database_name": "kittiyo-db",
+      "database_id": "local-kittiyo-db"
     }
   ]
 }

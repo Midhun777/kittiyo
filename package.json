@@ -1,5 +1,5 @@
 {
-  "name": "labdrop",
+  "name": "kittiyo",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "db:migrate:local": "wrangler d1 migrations apply labdrop-db --local",
-    "db:migrate:prod": "wrangler d1 migrations apply labdrop-db --remote",
+    "db:migrate:local": "wrangler d1 migrations apply kittiyo-db --local",
+    "db:migrate:prod": "wrangler d1 migrations apply kittiyo-db --remote",
     "deploy": "wrangler deploy"
   },
   "dependencies": {

@@ -144,7 +144,7 @@ export const App: React.FC = () => {
       {/* Minimal Footer */}
       <footer className="w-full max-w-md mx-auto py-8 text-center border-t border-[#EFE9DD]/80 mt-10">
         <p className="text-xs font-medium text-[#6B6864]">
-          LabDrop · Temporary sharing
+          Kittiyo? · Temporary sharing
         </p>
         <p className="text-[11px] text-[#9C9890] mt-1">
           No accounts. No history. Shares expire after 10 minutes.
