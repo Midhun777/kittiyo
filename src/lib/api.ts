@@ -39,7 +39,10 @@ export async function createShare(content: string, contentType?: 'text' | 'url')
       }),
     });
 
-    const data = await res.json().catch(() => null);
+    interface ApiResponsePayload {
+      error?: { code: string; message: string };
+    }
+    const data = (await res.json().catch(() => null)) as (ApiResponsePayload & ShareResponse) | null;
 
     if (!res.ok) {
       const err = data?.error || {
@@ -74,7 +77,10 @@ export async function retrieveShare(code: string): Promise<RetrieveResponse> {
       body: JSON.stringify({ code }),
     });
 
-    const data = await res.json().catch(() => null);
+    interface ApiResponsePayload {
+      error?: { code: string; message: string };
+    }
+    const data = (await res.json().catch(() => null)) as (ApiResponsePayload & RetrieveResponse) | null;
 
     if (!res.ok) {
       const err = data?.error || {
