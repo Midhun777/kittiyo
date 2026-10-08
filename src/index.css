@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --color-paper: #FBF9F5;
+  --color-paper-card: #FFFFFF;
+  --color-ink: #222120;
+  --color-ink-muted: #6B6864;
+  --color-ink-subtle: #9C9890;
+  --color-paper-border: #E6E0D5;
+  --color-accent: #2E5B88;
+  --color-accent-hover: #1E4268;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FBF9F5;
+  color: #222120;
+  background-image: radial-gradient(#E8E2D5 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom subtle notebook styling */
+.paper-card {
+  background: #FFFFFF;
+  border: 1px solid #E6E0D5;
+  box-shadow: 0 2px 0 0 #DCD4C7, 0 10px 25px -5px rgba(0, 0, 0, 0.03);
+}
+
+.paper-input {
+  background: #FCFBF9;
+  border: 1.5px solid #E6E0D5;
+  transition: all 0.2s ease-in-out;
+}
+
+.paper-input:focus {
+  outline: none;
+  border-color: #222120;
+  box-shadow: 0 0 0 3px rgba(34, 33, 32, 0.08);
+  background: #FFFFFF;
+}
+
+/* Accessible focus visible */
+button:focus-visible, a:focus-visible {
+  outline: 2px solid #222120;
+  outline-offset: 2px;
+}
+
+/* Disable smooth animations if reduced motion preferred */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

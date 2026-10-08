@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="12" fill="#222120"/>
+  <rect x="2" y="2" width="44" height="44" rx="10" fill="none" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="1.5"/>
+  <!-- Phone outline -->
+  <rect x="10" y="14" width="9" height="18" rx="2" fill="none" stroke="#FAF8F5" stroke-width="2"/>
+  <circle cx="14.5" cy="28.5" r="0.75" fill="#FAF8F5"/>
+  <!-- Arrow -->
+  <path d="M22 23L27 23M25 20L28 23L25 26" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- PC monitor outline -->
+  <rect x="31" y="16" width="10" height="12" rx="1.5" fill="none" stroke="#FAF8F5" stroke-width="2"/>
+  <line x1="36" y1="28" x2="36" y2="31" stroke="#FAF8F5" stroke-width="2" stroke-linecap="round"/>
+  <line x1="33" y1="31" x2="39" y2="31" stroke="#FAF8F5" stroke-width="2" stroke-linecap="round"/>
+</svg>
